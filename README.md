@@ -25,6 +25,8 @@ The left-half firmware built from this template has [ZMK Studio](https://studio.
 
 Keymap changes made in Studio are stored in the keyboard's flash, separately from the `.keymap` file in this repo: they survive reflashes of firmware built from this repo, and the `.keymap` file only provides the defaults Studio starts from (or falls back to after a settings reset).
 
+This repo also builds a `settings_reset` artifact in GitHub Actions. Flash that UF2 once to clear stored settings (including Studio-saved keymap data), then flash your normal left/right firmware again.
+
 ## Selecting your keyboard model
 
 The keymap selects your keyboard variant with a chosen **physical layout** node, e.g.:
