@@ -22,9 +22,8 @@ manifest:
       # deliberately when you want newer boards/layouts (see the README). To
       # track current ZMK main (Zephyr 4.1) instead, set this to zephyr-4.1.
 
-      revision: c6c0419ca3cfbba607b5a1f078c6506cda8aeeb5
+      revision: v2026.07
       import: config/west.yml
   self:
     path: config
-
 
