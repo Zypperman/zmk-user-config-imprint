@@ -177,7 +177,7 @@
  * moves the same way as the top of the ball. */
 &trackball_central_listener {
     input-processors =
-        <&zip_xy_scaler 1 4>,
+        <&zip_xy_scaler 1 5>,
         <&zip_xy_to_scroll_mapper>,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
