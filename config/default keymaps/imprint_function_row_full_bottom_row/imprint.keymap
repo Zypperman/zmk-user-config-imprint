@@ -1,10 +1,60 @@
+/*
+ * Cyboard Imprint keymap ported from a Redox Wireless Vial layout
+ * (source: 09_21_2026.vil).
+ *
+ * Physical layout: Imprint Function Row, 5-key bottom row (82 keys).
+ *
+ * Where the Redox keys went (both hands mirror each other):
+ *   - Function row: new on the Imprint. F1-F12 on Base, see-through on
+ *     every other layer.
+ *   - Number/Q/A/Z rows: identical positions.
+ *   - Redox 4-key bottom row: same columns on the Imprint bottom row.
+ *   - Redox inner-column TOP key (TG Mouse | [ ): the extra 5th
+ *     bottom-row key, right under your index finger.
+ *   - Thumb arc 1 (row nearest the keys): the two big 1.5u Redox thumb
+ *     keys + the upper-inner thumb key.
+ *       left  (outer->inner): Space, Backspace, Enter/Symbols
+ *       right (inner->outer): Space, Alt, Backspace
+ *   - Thumb arc 2: the 1.25u key + the upper-outer thumb key + the
+ *     inner-column BOTTOM key.
+ *       left  (outer->inner): Ctrl, Alt, F2
+ *       right (inner->outer): ], -, Enter
+ *   To swap which thumb arc is which, swap the last two lines of a layer.
+ *
+ * Layers: the Redox's empty layers 3, 4 and 7 were dropped, so
+ *   Redox 0,1,2,5,6  ->  Imprint 0,1,2,3,4  (named below).
+ *
+ * Added for the Imprint (Redox had no Bluetooth): on the Symbols layer
+ * (hold left-thumb Enter), right hand, on keys that were empty:
+ *   Y U I O P = Bluetooth profile 1-5,  H = clear current BT pairing,
+ *   J = toggle USB/Bluetooth output,    ' = RGB on/off.
+ */
+
+/* Vial mouse-key settings were: move step 1, max speed 21, interval 16 ms,
+ * 40 steps to max -> about 1300 px/s top speed reached in ~640 ms.     */
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1300
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
+
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
+
+#define BASE    0
+#define NAV     1
+#define MOUSE   2
+#define SYM     3
+#define MOUSE_R 4
+
+/* Match the Vial settings: tapping term 200 ms (ZMK default), tap-then-hold
+ * repeats the tap key like QMK, one-shot mods time out after 5 s. */
+&lt { quick-tap-ms = <200>; };
+&sk { release-after-ms = <5000>; };
+&mmv { time-to-max-speed-ms = <640>; };
 
 / {
     chosen { zmk,physical-layout = &physical_layout_imprint_function_row_full_bottom_row; };
@@ -12,83 +62,94 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        // Redox layer 0
+        base_layer {
+            display-name = "Base";
             bindings = <
-&kp ESC    &kp F1  &kp F2    &kp F3    &kp F4    &kp F5              &kp F6     &kp F7    &kp F8     &kp F9    &kp F10   &kp F11
-&kp EQUAL  &kp N1  &kp N2    &kp N3    &kp N4    &kp N5              &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W     &kp E     &kp R     &kp T               &kp Y      &kp U     &kp I      &kp O     &kp P     &kp BSLH
-&kp LCTRL  &kp A   &kp S     &kp D     &kp F     &kp G               &kp H      &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X     &kp C     &kp V     &kp B               &kp N      &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&trans     &trans  &kp LGUI  &kp LALT  &trans                                   &trans    &kp LBKT   &kp RBKT  &trans    &trans
-                                       &kp RET   &kp DEL  &kp ESC    &kp GRAVE  &kp BSPC  &kp SPACE
-                                       &kp LGUI  &mo 1    &mo 2      &kp CAPS   &mo 2     &mo 1
+    &kp F1         &kp F2         &kp F3          &kp F4         &kp F5          &kp F6              &kp F7         &kp F8          &kp F9       &kp F10        &kp F11              &kp F12
+    &kp GRAVE      &kp N1         &kp N2          &kp N3         &kp N4          &kp N5              &kp N6         &kp N7          &kp N8       &kp N9         &kp N0               &kp EQUAL
+    &kp TAB        &kp Q          &kp W           &kp E          &kp R           &kp T               &kp Y          &kp U           &kp I        &kp O          &kp P                &kp MINUS
+    &kp ESC        &kp A          &kp S           &kp D          &kp F           &kp G               &kp H          &kp J           &kp K        &kp L          &kp SEMI             &kp SQT
+    &kp LSHFT      &kp Z          &kp X           &kp C          &kp V           &kp B               &kp N          &kp M           &kp COMMA    &kp DOT        &kp FSLH             &kp BSLH
+    &kp LGUI       &kp K_APP      &mo MOUSE_R     &mo NAV        &tog MOUSE                                         &kp LBKT        &mo MOUSE    &mo MOUSE_R    &kp C_AC_BACK        &kp C_AC_FORWARD
+                                                  &kp SPACE      &kp BSPC        &lt SYM RET         &kp SPACE      &kp LALT        &kp BSPC
+                                                  &kp LCTRL      &kp LALT        &kp F2              &kp RBKT       &kp MINUS       &kp RET
             >;
         };
 
-        Numpad_Nav_Layer {
+        // Redox layer 1 - nav, media, numpad (hold left bottom-row key 4)
+        nav_layer {
+            display-name = "Nav";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans    &trans    &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans    &trans    &trans     &trans  &trans
-&trans  &trans  &kp N7  &kp N8  &kp N9  &trans            &trans  &kp HOME  &kp UP    &kp END    &trans  &trans
-&trans  &trans  &kp N4  &kp N5  &kp N6  &trans            &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &kp N1  &kp N2  &kp N3  &trans            &trans  &trans    &trans    &trans     &trans  &trans
-&trans  &trans  &trans  &kp N0  &trans                            &trans    &trans    &trans     &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans    &trans
-                                &trans  &trans  &trans    &trans  &trans    &trans
+    &trans         &trans         &trans          &trans         &trans          &trans              &trans         &trans          &trans       &trans         &trans               &trans
+    &kp HOME       &kp UP         &kp END         &kp INS        &kp C_VOL_UP    &kp C_BRI_UP        &kp KP_DIVIDE  &kp KP_MULTIPLY &kp KP_MINUS &trans         &kp K_FIND           &kp LG(L)
+    &kp LEFT       &kp DOWN       &kp RIGHT       &kp SPACE      &kp C_VOL_DN    &kp C_BRI_DN        &kp KP_N7      &kp KP_N8       &kp KP_N9    &kp KP_PLUS    &kp C_AL_CALC        &kp C_AL_EMAIL
+    &msc SCRL_LEFT &kp DEL        &msc SCRL_RIGHT &kp PG_UP      &sk LALT        &sk LCTRL           &kp KP_N4      &kp KP_N5       &kp KP_N6    &kp KP_COMMA   &kp C_AL_MY_COMPUTER &kp C_AC_SEARCH
+    &kp RET        &msc SCRL_DOWN &msc SCRL_UP    &kp PG_DN      &sk LGUI        &sk LSHFT           &kp KP_N1      &kp KP_N2       &kp KP_N3    &kp KP_EQUAL   &kp C_AC_REFRESH     &kp C_AC_HOME
+    &trans         &none          &none           &trans         &kp C_MUTE                                         &kp BSPC        &kp KP_DOT   &kp KP_ENTER   &none                &none
+                                                  &trans         &trans          &trans              &trans         &trans          &trans
+                                                  &trans         &kp TAB         &kp C_AL_CALC       &kp KP_NUMLOCK &trans          &kp KP_N0
             >;
         };
 
-        Keyboard_Control_Layer {
+        // Redox layer 2 - mouse, numpad, F-keys (toggle: left 5th bottom key)
+        mouse_layer {
+            display-name = "Mouse";
             bindings = <
-&trans       &trans        &trans        &trans        &trans        &trans                  &trans  &trans           &trans           &trans           &trans           &trans
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans           &trans           &trans
-&sys_reset   &trans        &trans        &trans        &trans        &trans                  &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &sys_reset
-&bootloader  &trans        &trans        &trans        &trans        &trans                  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
-&to 4        &trans        &trans        &trans        &trans        &trans                  &trans  &trans           &trans           &trans           &trans           &to 4
-&to 4        &trans        &trans        &trans        &trans                                        &trans           &trans           &trans           &trans           &to 4
-                                                       &trans        &trans        &trans    &trans  &trans           &trans
-                                                       &trans        &trans        &trans    &trans  &trans           &trans
+    &trans         &trans         &trans          &trans         &trans          &trans              &trans         &trans          &trans       &trans         &trans               &trans
+    &mkp MB4       &mkp MCLK      &mkp MB5        &kp KP_DIVIDE  &kp KP_MULTIPLY &kp KP_DOT          &kp F1         &kp F2          &kp F3       &kp C_PREV     &kp C_PP             &kp C_NEXT
+    &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &kp KP_N7      &kp KP_N8       &kp KP_N9           &kp F4         &kp F5          &kp F6       &kp HOME       &kp UP               &kp END
+    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp KP_N4      &kp KP_N5       &kp KP_N6           &kp F7         &kp F8          &kp F9       &kp LEFT       &kp DOWN             &kp RIGHT
+    &trans         &msc SCRL_UP   &msc SCRL_DOWN  &kp KP_N1      &kp KP_N2       &kp KP_N3           &kp F10        &kp F11         &kp F12      &sk LCTRL      &kp PG_UP            &kp PG_DN
+    &trans         &kp KP_MINUS   &kp KP_PLUS     &kp KP_N0      &trans                                             &kp SLCK        &trans       &kp DEL        &trans               &trans
+                                                  &trans         &trans          &trans              &trans         &trans          &trans
+                                                  &trans         &trans          &kp KP_NUMLOCK      &kp CAPS       &trans          &trans
             >;
         };
 
-        Auto_Mouse_Layer {
+        // Redox layer 5 - symbols, F-keys, vim keys (hold left thumb Enter)
+        sym_layer {
+            display-name = "Symbols";
             bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans                               &trans  &trans  &trans  &trans  &trans
-                                      &trans     &trans  &trans    &trans  &trans  &trans
-                                      &trans     &trans  &trans    &trans  &trans  &trans
+    &trans         &trans         &trans          &trans         &trans          &trans              &trans         &trans          &trans       &trans         &trans               &trans
+    &none          &kp F1         &kp F2          &kp F3         &kp F4          &kp F5              &kp F6         &kp F7          &kp F8       &kp F9         &kp F10              &kp F11
+    &none          &kp FSLH       &kp LS(N)       &kp N          &kp N0          &kp CARET           &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2 &bt BT_SEL 3   &bt BT_SEL 4         &kp F12
+    &none          &kp EXCL       &kp AT          &kp HASH       &kp DLLR        &kp PRCNT           &bt BT_CLR     &out OUT_TOG    &none        &none          &none                &rgb_ug RGB_TOG
+    &caps_word     &kp CARET      &kp AMPS        &kp ASTRK      &kp LPAR        &kp RPAR            &none          &none           &none        &none          &none                &none
+    &trans         &trans         &kp LBKT        &kp RBKT       &kp UNDER                                          &none           &none        &none          &none                &none
+                                                  &kp DOT        &trans          &trans              &trans         &trans          &trans
+                                                  &kp COMMA      &trans          &kp SEMI            &none          &trans          &trans
             >;
         };
 
-        factory_test {
+        // Redox layer 6 - right-hand mouse, scroll
+        mouse_r_layer {
+            display-name = "Mouse R";
             bindings = <
-&kp N0  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5            &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp N1
-&kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7            &kp N8  &kp N9  &kp N0  &kp N1  &kp N2  &kp N3
-&kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9            &kp N0  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5
-&kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp N1            &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7
-&kp N8  &kp N9  &kp N0  &kp N1  &kp N2  &kp N3            &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9
-&kp N0  &kp N1  &kp N2  &kp N3  &kp N4                            &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
-                                &kp N1  &kp N2  &kp N3    &kp N4  &kp N5  &kp N6
-                                &kp N7  &kp N8  &kp N9    &kp N0  &kp N1  &kp N2
+    &trans         &trans         &trans          &trans         &trans          &trans              &trans         &trans          &trans       &trans         &trans               &trans
+    &kp LCTRL      &kp LALT       &kp DEL         &kp CAPS       &none           &none               &none          &none           &none        &none          &mkp MCLK            &none
+    &none          &msc SCRL_UP   &none           &kp SLCK       &none           &none               &none          &none           &none        &mkp LCLK      &mmv MOVE_UP         &mkp RCLK
+    &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &kp KP_NUMLOCK &none           &none               &none          &none           &mkp MB5     &mmv MOVE_LEFT &mmv MOVE_DOWN       &mmv MOVE_RIGHT
+    &none          &kp PG_DN      &kp PG_UP       &sk LCTRL      &sk LALT        &kp TAB             &none          &none           &mkp MB4     &none          &msc SCRL_UP         &msc SCRL_DOWN
+    &trans         &trans         &none           &trans         &none                                              &none           &none        &trans         &msc SCRL_LEFT       &msc SCRL_RIGHT
+                                                  &sk LGUI       &sk LSHFT       &trans              &trans         &trans          &trans
+                                                  &trans         &trans          &none               &none          &trans          &trans
             >;
         };
     };
 };
 
-// right hand trackball configuration
+// Trackball settings, unchanged from Cyboard's template. Harmless if your
+// Imprint has no trackball.
 
+// right hand trackball configuration
 // &trackball_peripheral_listener {
 //    input-processors =
-//     activate layer 3 within 500ms of the trackball moving
-//     <&zip_temp_layer 3 500>;
+//     activate a layer within 500ms of the trackball moving
+//     <&zip_temp_layer MOUSE 500>;
 // };
 
-//left hand trackball configuration
-
+// left hand trackball configuration
 &trackball_central_listener {
     input-processors =
         // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),
