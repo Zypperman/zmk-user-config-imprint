@@ -180,14 +180,18 @@
  * until 500 ms after it stops. If you move or add layers in the editor,
  * update the 5 below to the Trackball layer's new number. */
 
-&trackball_peripheral_listener { input-processors = <&zip_temp_layer 5 500>; };
+&trackball_peripheral_listener {
+    input-processors = 
+        <&zip_temp_layer 5 500>,
+        <&zip_xy_scaler 1 2>; 
+};
 
 /* LEFT ball = scroll wheel (Cyboard's default): 1/3 speed, and the page
  * moves the same way as the top of the ball. */
 
 &trackball_central_listener {
     input-processors =
-        <&zip_xy_scaler 1 5>,
+        <&zip_xy_scaler 1 10>,
         <&zip_xy_to_scroll_mapper>,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
