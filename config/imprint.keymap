@@ -42,6 +42,7 @@
 
 /* Per-layer underglow colors: edit config/layer_rgb.dtsi (or generate it
  * with rgb-emulator/index.html). */
+
 #include "layer_rgb.dtsi"
 
 /* Match the Vial settings: tapping term 200 ms (ZMK default), tap-then-hold
@@ -84,7 +85,7 @@
 &kp C_MUTE    &trans     &trans          &trans        &trans           &trans                    &trans          &trans           &trans        &trans        &trans                &trans
 &kp C_VOL_UP  &kp PG_UP  &kp C_BRI_DEC   &kp C_BRI_UP  &trans           &kp C_BRI_UP              &kp KP_DIVIDE   &kp KP_MULTIPLY  &kp KP_MINUS  &trans        &kp K_FIND            &kp LG(L)
 &kp C_VOL_DN  &kp PG_DN  &kp HOME        &kp UP        &kp END          &kp C_BRI_DEC             &kp KP_N7       &kp KP_N8        &kp KP_N9     &kp KP_PLUS   &kp C_AL_CALC         &kp C_AL_EMAIL
-&trans        &kp LWIN   &kp LEFT        &kp DOWN      &sk RIGHT        &msc SCRL_UP              &kp KP_N4       &kp KP_N5        &kp KP_N6     &kp KP_COMMA  &kp C_AL_MY_COMPUTER  &kp C_AC_SEARCH
+&trans        &kp LWIN   &kp LEFT        &kp DOWN      &kp RIGHT        &msc SCRL_UP              &kp KP_N4       &kp KP_N5        &kp KP_N6     &kp KP_COMMA  &kp C_AL_MY_COMPUTER  &kp C_AC_SEARCH
 &sk LALT      &sk TAB    &msc SCRL_LEFT  &kp DEL       &msc SCRL_RIGHT  &msc SCRL_DOWN            &kp KP_N1       &kp KP_N2        &kp KP_N3     &kp KP_EQUAL  &kp C_AC_REFRESH      &kp C_AC_HOME
 &sk LCTRL     &trans     &sk LSHIFT      &kp ENTER     &trans                                                     &kp BSPC         &kp KP_DOT    &kp KP_ENTER  &trans                &trans
                                                        &trans           &trans          &trans    &trans          &trans           &trans
@@ -185,9 +186,7 @@
  * update the 5 below to the Trackball layer's new number. */
 
 &trackball_peripheral_listener {
-    input-processors = 
-        <&zip_temp_layer 5 500>,
-        <&zip_xy_scaler 1 2>; 
+    input-processors = <&zip_temp_layer 5 500>, <&zip_xy_scaler 1 2>;
 };
 
 /* LEFT ball = scroll wheel (Cyboard's default): 1/3 speed, and the page
