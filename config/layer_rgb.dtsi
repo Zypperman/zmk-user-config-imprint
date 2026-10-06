@@ -1,0 +1,29 @@
+/*
+ * Per-layer RGB underglow (handled by src/layer_rgb.c).
+ *
+ * Generate this file with the emulator in rgb-emulator/index.html, or edit
+ * it by hand. The color shown is the one for the highest active layer that
+ * has an entry; layers without one fall through to the next lower layer.
+ *
+ *   layer      layer number, same as in imprint.keymap (0 = qwerty)
+ *   color-hsb  <hue 0-359  saturation 0-100  brightness 0-100>
+ *              (brightness is scaled into the Imprint's 5-50% LED range)
+ *   effect     0 solid, 1 breathe, 2 spectrum, 3 swirl  (optional)
+ *   speed      1-5, for the animated effects             (optional)
+ *
+ * RGB on/off (&rgb_ug RGB_TOG) still works and is left alone. Changing a
+ * layer overrides any hue/brightness you set with the &rgb_ug keys.
+ */
+
+/ {
+    layer_rgb {
+        compatible = "zmk,layer-rgb";
+
+        qwerty    { layer = <0>; color-hsb = <170 100 60>; effect = <0>; };
+        nav       { layer = <1>; color-hsb = <220 100 80>; effect = <0>; };
+        mouse     { layer = <2>; color-hsb = <120 100 80>; effect = <1>; speed = <3>; };
+        vnc       { layer = <3>; color-hsb = <30 100 80>;  effect = <0>; };
+        mouse_r   { layer = <4>; color-hsb = <55 100 80>;  effect = <0>; };
+        trackball { layer = <5>; color-hsb = <300 100 80>; effect = <0>; };
+    };
+};

@@ -27,6 +27,40 @@ Keymap changes made in Studio are stored in the keyboard's flash, separately fro
 
 This repo also builds a `settings_reset` artifact in GitHub Actions. Flash that UF2 once to clear stored settings (including Studio-saved keymap data), then flash your normal left/right firmware again.
 
+## Per-layer RGB underglow
+
+Stock ZMK (v0.3.0) has a single global underglow color, so this repo adds a
+small module (`src/layer_rgb.c`, wired up by `CMakeLists.txt`, `Kconfig`,
+`dts/bindings/` and `zephyr/module.yml`) that changes the underglow whenever
+the active layer changes. The colors live in
+[`config/layer_rgb.dtsi`](config/layer_rgb.dtsi):
+
+```dts
+qwerty { layer = <0>; color-hsb = <170 100 60>; effect = <0>; };
+mouse  { layer = <2>; color-hsb = <120 100 80>; effect = <1>; speed = <3>; };
+```
+
+- The **highest active layer that has an entry** sets the color. A layer with
+  no entry falls through to the next lower one.
+- `effect`: 0 solid, 1 breathe, 2 spectrum, 3 swirl (optional). `speed`: 1-5 (optional).
+- The left half tracks layers and sends each change to the right half through
+  the regular `&rgb_ug` behavior, so **only the left half needs reflashing**
+  after you change colors.
+- `&rgb_ug RGB_TOG` still turns the lights on and off. Hue and brightness
+  keys still work, but the next layer change overrides them.
+- ZMK saves the underglow state to flash about 60 s after the last change,
+  as it does for the `&rgb_ug` keys.
+
+### Emulator
+
+Open [`rgb-emulator/index.html`](rgb-emulator/index.html) in a browser (just
+double-click it, no server needed). It draws this keymap's layout and legends
+and simulates the firmware's effects with the Imprint's brightness limits.
+Hold or toggle layers to preview them, adjust each layer's color, effect and
+speed, then copy or download the generated `layer_rgb.dtsi` into `config/`.
+The key legends are baked into the page, so if you change `imprint.keymap`
+they won't update. The colors and export still work.
+
 ## Selecting your keyboard model
 
 The keymap selects your keyboard variant with a chosen **physical layout** node, e.g.:
