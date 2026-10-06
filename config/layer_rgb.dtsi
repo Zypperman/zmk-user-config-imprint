@@ -18,12 +18,11 @@
 / {
     layer_rgb {
         compatible = "zmk,layer-rgb";
-
-        qwerty    { layer = <0>; color-hsb = <170 100 60>; effect = <0>; };
-        nav       { layer = <1>; color-hsb = <220 100 80>; effect = <0>; };
-        mouse     { layer = <2>; color-hsb = <120 100 80>; effect = <1>; speed = <3>; };
-        vnc       { layer = <3>; color-hsb = <30 100 80>;  effect = <0>; };
-        mouse_r   { layer = <4>; color-hsb = <55 100 80>;  effect = <0>; };
-        trackball { layer = <5>; color-hsb = <300 100 80>; effect = <0>; };
+        qwerty    { layer = <0>; color-hsb = <180 50 10>; effect = <0>; };
+        nav       { layer = <1>; color-hsb = <240 50 10>; effect = <0>; };
+        mouse     { layer = <2>; color-hsb = <300 50 10>; effect = <0>; };
+        vnc       { layer = <3>; color-hsb = <60 50 10>;  effect = <0>; };
+        mouse_r   { layer = <4>; color-hsb = <120 50 10>;  effect = <0>; };
+        trackball { layer = <5>; color-hsb = <0 50 10>; effect = <0>; };
     };
 };
