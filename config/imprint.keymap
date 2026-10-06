@@ -61,14 +61,14 @@
         base_layer {
             display-name = "Base";
             bindings = <
-&kp F1     &kp F2     &kp F3  &kp F4  &kp F5     &kp F6                 &kp F7     &kp F8     &kp F9     &kp F10  &kp F11        &kp F12
-&kp GRAVE  &kp N1     &kp N2  &kp N3  &kp N4     &kp N5                 &kp N6     &kp N7     &kp N8     &kp N9   &kp N0         &kp EQUAL
-&kp TAB    &kp Q      &kp W   &kp E   &kp R      &kp T                  &kp Y      &kp U      &kp I      &kp O    &kp P          &kp MINUS
-&kp ESC    &kp A      &kp S   &kp D   &kp F      &kp G                  &kp H      &kp J      &kp K      &kp L    &kp SEMI       &kp SQT
-&kp LSHFT  &kp Z      &kp X   &kp C   &kp V      &kp B                  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH       &kp BSLH
-&kp LGUI   &kp K_APP  &mo 4   &mo 1   &tog 2                                       &kp LBKT   &mo 2      &mo 4    &kp C_AC_BACK  &kp C_AC_FORWARD
-                                      &kp SPACE  &kp BSPC  &lt 3 RET    &kp SPACE  &kp LALT   &kp BSPC
-                                      &kp LCTRL  &kp LALT  &kp F2       &kp RBKT   &kp MINUS  &kp RET
+&kp F1     &kp F2     &kp F3  &kp F4  &kp F5     &kp F6                 &kp F7     &kp F8    &kp F9     &kp F10  &kp F11        &kp F12
+&kp GRAVE  &kp N1     &kp N2  &kp N3  &kp N4     &kp N5                 &kp N6     &kp N7    &kp N8     &kp N9   &kp N0         &kp EQUAL
+&kp TAB    &kp Q      &kp W   &kp E   &kp R      &kp T                  &kp Y      &kp U     &kp I      &kp O    &kp P          &kp MINUS
+&kp ESC    &kp A      &kp S   &kp D   &kp F      &kp G                  &kp H      &kp J     &kp K      &kp L    &kp SEMI       &kp SQT
+&kp LSHFT  &kp Z      &kp X   &kp C   &kp V      &kp B                  &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH       &kp BSLH
+&kp LGUI   &kp K_APP  &mo 4   &mo 1   &tog 2                                       &kp LBKT  &mo 2      &mo 4    &kp C_AC_BACK  &kp C_AC_FORWARD
+                                      &kp SPACE  &kp BSPC  &kp ENTER    &mkp MB2   &mkp MB1  &kp BSPC
+                                      &kp LCTRL  &kp LALT  &tog 3       &kp SPACE  &kp LALT  &kp RET
             >;
         };
 
@@ -106,17 +106,17 @@
 
         // 3 - Redox layer 5: symbols, F-keys, vim keys (hold left thumb Enter)
 
-        sym_layer {
-            display-name = "Symbols";
+        vnc {
+            display-name = "vim and config";
             bindings = <
-&trans      &trans     &trans     &trans     &trans     &trans                 &trans           &trans           &trans           &trans           &trans           &trans
-&none       &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                 &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &kp F11
-&none       &kp FSLH   &kp LS(N)  &kp N      &kp N0     &kp CARET              &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &kp F12
-&none       &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT              &bt BT_CLR       &out OUT_TOG     &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG
-&caps_word  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR               &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &none
-&trans      &trans     &kp LBKT   &kp RBKT   &kp UNDER                                          &none            &none            &none            &none            &none
-                                             &kp DOT    &trans     &trans      &trans           &trans           &trans
-                                             &kp COMMA  &trans     &kp SEMI    &none            &trans           &trans
+&trans      &trans     &trans                &trans                 &trans        &trans                         &trans           &trans           &trans           &trans           &trans           &trans
+&none       &kp F1     &kp F2                &kp F3                 &kp F4        &kp F5                         &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &kp F11
+&none       &kp FSLH   &kp LS(N)             &kp N                  &kp N0        &kp CARET                      &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &kp F12
+&none       &kp EXCL   &kp AT                &kp HASH               &kp DLLR      &kp PRCNT                      &bt BT_CLR       &out OUT_TOG     &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG
+&caps_word  &kp CARET  &kp AMPS              &kp LEFT_BRACKET       &kp SPACE     &kp RIGHT_BRACKET              &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &none
+&kp DOT     &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER                                                     &none            &none            &none            &none            &none
+                                                                    &kp ASTERISK  &trans             &trans      &trans           &trans           &trans
+                                                                    &kp COMMA     &kp DOT            &kp SEMI    &trans           &trans           &trans
             >;
         };
 
@@ -130,7 +130,7 @@
 &none           &msc SCRL_UP    &none            &kp SLCK        &none     &none                &none            &none            &none     &mkp LCLK       &mmv MOVE_UP    &mkp RCLK
 &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &kp KP_NUMLOCK  &none     &none                &none            &none            &mkp MB5  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT
 &none           &kp PG_DN       &kp PG_UP        &sk LCTRL       &sk LALT  &kp TAB              &none            &none            &mkp MB4  &none           &msc SCRL_UP    &msc SCRL_DOWN
-&trans          &trans          &none            &trans          &none                                           &none            &none     &trans          &msc SCRL_LEFT  &msc SCRL_RIGHT
+&trans          &trans          &trans           &none           &none                                           &none            &none     &trans          &msc SCRL_LEFT  &msc SCRL_RIGHT
                                                                  &sk LGUI  &sk LSHFT  &trans    &trans           &trans           &trans
                                                                  &trans    &trans     &none     &none            &trans           &trans
             >;
@@ -141,14 +141,14 @@
         trackball_layer {
             display-name = "Trackball";
             bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans                               &trans  &trans  &trans  &trans  &trans
-                                      &trans     &trans  &trans    &trans  &trans  &trans
-                                      &trans     &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans    &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans    &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans    &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mkp MB3  &mkp MB2  &mkp MB1  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &mkp MB5  &mkp MB4  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans                              &trans  &trans  &trans  &trans  &trans
+                                    &trans    &trans  &trans    &trans  &trans  &trans
+                                    &trans    &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
