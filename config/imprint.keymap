@@ -40,6 +40,10 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
+/* Per-layer underglow colors: edit config/layer_rgb.dtsi (or generate it
+ * with rgb-emulator/index.html). */
+#include "layer_rgb.dtsi"
+
 /* Match the Vial settings: tapping term 200 ms (ZMK default), tap-then-hold
  * repeats the tap key like QMK, one-shot mods time out after 5 s, mouse keys
  * reach full speed in ~640 ms. */
