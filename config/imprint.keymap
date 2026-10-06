@@ -61,14 +61,14 @@
         qwerty_layer {
             display-name = "qwerty";
             bindings = <
-&kp F1     &kp F2     &kp F3  &kp F4  &kp F5     &kp F6                   &kp F7     &kp F8     &kp F9     &kp F10  &kp F11   &kp F12
-&kp GRAVE  &kp N1     &kp N2  &kp N3  &kp N4     &kp N5                   &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp EQUAL
-&kp TAB    &kp Q      &kp W   &kp E   &kp R      &kp T                    &kp Y      &kp U      &kp I      &kp O    &kp P     &kp MINUS
-&kp ESC    &kp A      &kp S   &kp D   &kp F      &kp G                    &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z      &kp X   &kp C   &kp V      &kp B                    &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
-&kp LGUI   &kp K_APP  &mo 2   &mo 4   &kp LCTRL                                      &kp LCTRL  &mo 2      &mo 4    &mkp MB4  &mkp MB5
+&kp F1     &kp F2     &kp F3  &kp F4  &kp F5     &kp F6                   &kp F7     &kp F8     &kp F9     &kp F10  &kp F11           &kp F12
+&kp GRAVE  &kp N1     &kp N2  &kp N3  &kp N4     &kp N5                   &kp N6     &kp N7     &kp N8     &kp N9   &kp N0            &kp EQUAL
+&kp TAB    &kp Q      &kp W   &kp E   &kp R      &kp T                    &kp Y      &kp U      &kp I      &kp O    &kp P             &kp MINUS
+&kp ESC    &kp A      &kp S   &kp D   &kp F      &kp G                    &kp H      &kp J      &kp K      &kp L    &kp SEMI          &kp SQT
+&kp LSHFT  &kp Z      &kp X   &kp C   &kp V      &kp B                    &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH          &kp BSLH
+&kp LGUI   &kp K_APP  &mo 4   &tog 2  &mo 1                                          &kp LCTRL  &mo 2      &mo 4    &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                       &kp SPACE  &kp BSPC  &lt 3 ENTER    &kp SPACE  &kp LALT   &kp BSPC
-                                      &mo 1      &kp LALT  &tog 3         &kp LBKT   &kp RBKT   &kp RET
+                                      &kp LCTRL  &kp LALT  &tog 3         &mkp MB2   &mkp MB1   &kp RET
             >;
         };
 
@@ -77,14 +77,14 @@
         nav_layer {
             display-name = "Nav";
             bindings = <
-&kp C_MUTE      &trans          &trans          &trans        &trans           &trans                           &trans          &trans           &trans        &trans        &trans                &trans
-&kp C_VOL_UP    &kp PG_UP       &kp C_BRI_DEC   &kp C_BRI_UP  &trans           &trans                           &kp KP_DIVIDE   &kp KP_MULTIPLY  &kp KP_MINUS  &trans        &kp K_FIND            &kp LG(L)
-&kp C_VOL_DN    &kp PG_DN       &kp HOME        &kp UP        &kp END          &kp C_BRI_DEC                    &kp KP_N7       &kp KP_N8        &kp KP_N9     &kp KP_PLUS   &kp C_AL_CALC         &kp C_AL_EMAIL
-&msc SCRL_LEFT  &kp DEL         &kp LEFT        &kp DOWN      &sk RIGHT        &msc SCRL_UP                     &kp KP_N4       &kp KP_N5        &kp KP_N6     &kp KP_COMMA  &kp C_AL_MY_COMPUTER  &kp C_AC_SEARCH
-&kp RET         &msc SCRL_DOWN  &msc SCRL_LEFT  &kp DEL       &msc SCRL_RIGHT  &msc SCRL_DOWN                   &kp KP_N1       &kp KP_N2        &kp KP_N3     &kp KP_EQUAL  &kp C_AC_REFRESH      &kp C_AC_HOME
-&trans          &none           &none           &trans        &trans                                                            &kp BSPC         &kp KP_DOT    &kp KP_ENTER  &none                 &none
-                                                              &trans           &trans          &trans           &trans          &trans           &trans
-                                                              &trans           &kp TAB         &kp C_AL_CALC    &kp KP_NUMLOCK  &trans           &kp KP_N0
+&kp C_MUTE      &trans     &trans          &trans        &trans           &trans                           &trans          &trans           &trans        &trans        &trans                &trans
+&kp C_VOL_UP    &kp PG_UP  &kp C_BRI_DEC   &kp C_BRI_UP  &trans           &kp C_BRI_UP                     &kp KP_DIVIDE   &kp KP_MULTIPLY  &kp KP_MINUS  &trans        &kp K_FIND            &kp LG(L)
+&kp C_VOL_DN    &kp PG_DN  &kp HOME        &kp UP        &kp END          &kp C_BRI_DEC                    &kp KP_N7       &kp KP_N8        &kp KP_N9     &kp KP_PLUS   &kp C_AL_CALC         &kp C_AL_EMAIL
+&sk LEFT_ALT    &kp LWIN   &kp LEFT        &kp DOWN      &sk RIGHT        &msc SCRL_UP                     &kp KP_N4       &kp KP_N5        &kp KP_N6     &kp KP_COMMA  &kp C_AL_MY_COMPUTER  &kp C_AC_SEARCH
+&sk LEFT_SHIFT  &sk LCTRL  &msc SCRL_LEFT  &kp DEL       &msc SCRL_RIGHT  &msc SCRL_DOWN                   &kp KP_N1       &kp KP_N2        &kp KP_N3     &kp KP_EQUAL  &kp C_AC_REFRESH      &kp C_AC_HOME
+&trans          &trans     &trans          &kp ENTER     &trans                                                            &kp BSPC         &kp KP_DOT    &kp KP_ENTER  &none                 &none
+                                                         &trans           &trans          &trans           &trans          &trans           &trans
+                                                         &trans           &kp TAB         &kp C_AL_CALC    &kp KP_NUMLOCK  &trans           &kp KP_N0
             >;
 
             label = "nav";
@@ -111,14 +111,14 @@
         vnc {
             display-name = "vim and config";
             bindings = <
-&trans      &trans     &trans            &trans             &trans                &trans                           &trans           &trans           &trans           &trans           &trans           &trans
-&none       &kp F1     &kp F2            &kp F3             &kp F4                &kp F5                           &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &kp F11
-&none       &kp FSLH   &kp LS(N)         &kp N              &kp N0                &kp CARET                        &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &kp F12
-&none       &kp EXCL   &kp AT            &kp HASH           &kp DLLR              &kp PRCNT                        &bt BT_CLR       &out OUT_TOG     &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG
-&caps_word  &kp CARET  &kp AMPS          &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS            &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &none
-&kp COMMA   &kp SEMI   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UNDER                                                               &none            &none            &none            &none            &none
-                                                            &trans                &trans                 &trans    &trans           &trans           &trans
-                                                            &kp DOT               &trans                 &trans    &trans           &trans           &trans
+&trans      &trans     &trans            &trans             &trans                &trans                           &trans        &trans           &trans           &trans           &trans           &trans
+&trans      &kp F1     &kp F2            &kp F3             &kp F4                &kp F5                           &kp F6        &kp F7           &kp F8           &kp F9           &kp F10          &kp F11
+&kp DOT     &kp FSLH   &kp LS(N)         &kp N              &kp N0                &kp CARET                        &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &kp F12
+&trans      &kp EXCL   &kp AT            &kp HASH           &kp DLLR              &kp PRCNT                        &bt BT_CLR    &out OUT_TOG     &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG
+&caps_word  &kp CARET  &kp AMPS          &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS            &trans        &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &none
+&kp COMMA   &kp SEMI   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UNDER                                                            &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &none            &none            &none
+                                                            &trans                &trans                 &trans    &trans        &trans           &trans
+                                                            &trans                &trans                 &trans    &trans        &trans           &trans
             >;
         };
 
@@ -128,13 +128,13 @@
             display-name = "Mouse R";
             bindings = <
 &trans          &trans          &trans           &trans          &trans    &trans               &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &trans    &trans          &trans          &trans
-&kp LCTRL       &kp LALT        &kp DEL          &kp CAPS        &none     &none                &none            &rgb_ug RGB_HUD  &none     &none           &mkp MCLK       &none
-&none           &msc SCRL_UP    &none            &kp SLCK        &none     &none                &none            &none            &none     &mkp LCLK       &mmv MOVE_UP    &mkp RCLK
-&msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &kp KP_NUMLOCK  &none     &none                &none            &none            &mkp MB5  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT
-&none           &kp PG_DN       &kp PG_UP        &sk LCTRL       &sk LALT  &kp TAB              &none            &none            &mkp MB4  &none           &msc SCRL_UP    &msc SCRL_DOWN
-&trans          &trans          &trans           &none           &none                                           &none            &none     &trans          &msc SCRL_LEFT  &msc SCRL_RIGHT
+&kp LCTRL       &kp LALT        &kp DEL          &kp CAPS        &trans    &trans               &trans           &rgb_ug RGB_HUD  &trans    &trans          &mkp MCLK       &trans
+&trans          &msc SCRL_UP    &trans           &kp SLCK        &trans    &trans               &trans           &trans           &trans    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK
+&msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &kp KP_NUMLOCK  &trans    &trans               &trans           &trans           &mkp MB5  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT
+&trans          &kp PG_DN       &kp PG_UP        &sk LCTRL       &sk LALT  &kp TAB              &trans           &trans           &mkp MB4  &trans          &msc SCRL_UP    &msc SCRL_DOWN
+&trans          &trans          &trans           &trans          &trans                                          &trans           &trans    &trans          &msc SCRL_LEFT  &msc SCRL_RIGHT
                                                                  &sk LGUI  &sk LSHFT  &trans    &trans           &trans           &trans
-                                                                 &trans    &trans     &none     &none            &trans           &trans
+                                                                 &trans    &trans     &trans    &trans           &trans           &trans
             >;
         };
 
