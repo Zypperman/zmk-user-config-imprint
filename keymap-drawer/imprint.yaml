@@ -1,0 +1,500 @@
+layout: {zmk_keyboard: imprint, layout_name: physical_layout_imprint_function_row_full_bottom_row}
+layers:
+  qwerty:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '='
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - '-'
+  - ESC
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - LSHFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - \
+  - LGUI
+  - APP
+  - Mouse R
+  - {t: Mouse, h: toggle}
+  - nav
+  - LCTRL
+  - Mouse
+  - Mouse R
+  - '['
+  - ']'
+  - SPACE
+  - BSPC
+  - {t: ENTER, h: vim and config}
+  - SPACE
+  - LALT
+  - BSPC
+  - LCTRL
+  - LALT
+  - {t: vim and config, h: toggle}
+  - R Click
+  - L Click
+  - RET
+  nav:
+  - MUTE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - VOL UP
+  - PG UP
+  - BRI DEC
+  - BRI UP
+  - {t: ▽, type: trans}
+  - BRI UP
+  - KP DIVIDE
+  - KP MULTIPLY
+  - KP MINUS
+  - {t: ▽, type: trans}
+  - FIND
+  - Gui+L
+  - VOL DN
+  - PG DN
+  - HOME
+  - UP
+  - END
+  - BRI DEC
+  - KP 7
+  - KP 8
+  - KP 9
+  - KP PLUS
+  - AL CALC
+  - AL EMAIL
+  - {t: ▽, type: trans}
+  - LWIN
+  - LEFT
+  - DOWN
+  - RIGHT
+  - Scroll ↑
+  - KP 4
+  - KP 5
+  - KP 6
+  - KP COMMA
+  - AL MY COMPUTER
+  - AC SEARCH
+  - {t: LALT, h: sticky}
+  - {t: TAB, h: sticky}
+  - Scroll ←
+  - DEL
+  - Scroll →
+  - Scroll ↓
+  - KP 1
+  - KP 2
+  - KP 3
+  - KP EQUAL
+  - AC REFRESH
+  - AC HOME
+  - {t: LCTRL, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: LSHIFT, h: sticky}
+  - ENTER
+  - {type: held}
+  - BSPC
+  - KP DOT
+  - KP ENTER
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - KP NUMLOCK
+  - {t: ▽, type: trans}
+  - KP 0
+  Mouse:
+  - CAPS
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Back
+  - M Click
+  - Fwd
+  - KP DIVIDE
+  - KP MULTIPLY
+  - KP NUMLOCK
+  - F1
+  - F2
+  - F3
+  - PREV
+  - PP
+  - NEXT
+  - L Click
+  - Mouse ↑
+  - R Click
+  - KP 7
+  - KP 8
+  - KP 9
+  - F4
+  - F5
+  - F6
+  - HOME
+  - UP
+  - END
+  - Mouse ←
+  - Mouse ↓
+  - Mouse →
+  - KP 4
+  - KP 5
+  - KP 6
+  - F7
+  - F8
+  - F9
+  - LEFT
+  - DOWN
+  - RIGHT
+  - {t: ▽, type: trans}
+  - Scroll ↑
+  - Scroll ↓
+  - KP 1
+  - KP 2
+  - KP 3
+  - F10
+  - F11
+  - F12
+  - {t: LCTRL, h: sticky}
+  - PG UP
+  - PG DN
+  - KP DOT
+  - KP MINUS
+  - KP PLUS
+  - {t: ▽, type: trans}
+  - KP 0
+  - SLCK
+  - {type: held}
+  - DEL
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  vim and config:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - .
+  - /
+  - Sft+N
+  - N
+  - '0'
+  - ^
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - F12
+  - {t: ▽, type: trans}
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - BT CLR
+  - OUT TOG
+  - RGB HUI
+  - RGB SAI
+  - RGB BRI
+  - RGB TOG
+  - '&caps_word'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RGB HUD
+  - RGB SAD
+  - RGB BRD
+  - ''
+  - ','
+  - ;
+  - '['
+  - ']'
+  - _
+  - RGB EFF
+  - RGB EFR
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Mouse R:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RGB TOG
+  - RGB HUI
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LCTRL
+  - LALT
+  - DEL
+  - CAPS
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RGB HUD
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - M Click
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Scroll ↑
+  - {t: ▽, type: trans}
+  - SLCK
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - L Click
+  - Mouse ↑
+  - R Click
+  - Scroll ←
+  - Scroll ↓
+  - Scroll →
+  - KP NUMLOCK
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Fwd
+  - Mouse ←
+  - Mouse ↓
+  - Mouse →
+  - {t: ▽, type: trans}
+  - PG DN
+  - PG UP
+  - {t: LCTRL, h: sticky}
+  - {t: LALT, h: sticky}
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Back
+  - {t: ▽, type: trans}
+  - Scroll ↑
+  - Scroll ↓
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Scroll ←
+  - Scroll →
+  - {t: LGUI, h: sticky}
+  - {t: LSHFT, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Trackball:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - M Click
+  - R Click
+  - L Click
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Fwd
+  - Back
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
