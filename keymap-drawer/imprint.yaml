@@ -120,8 +120,8 @@ layers:
   - KP PLUS
   - AL CALC
   - AL EMAIL
-  - {t: ▽, type: trans}
-  - LWIN
+  - {t: LCTRL, h: sticky}
+  - {t: LWIN, h: sticky}
   - LEFT
   - DOWN
   - RIGHT
@@ -133,7 +133,7 @@ layers:
   - AL MY COMPUTER
   - AC SEARCH
   - {t: LALT, h: sticky}
-  - {t: TAB, h: sticky}
+  - TAB
   - Scroll ←
   - DEL
   - Scroll →
