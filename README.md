@@ -9,6 +9,18 @@ Wireless Cyboard keyboard configuration repository template for using ZMK firmwa
 > stable stack; after that, [Pinned versions](#pinned-versions) keeps it from
 > happening again.
 
+## Keymap diagram
+
+![Keymap](keymap-drawer/imprint.svg)
+
+The **Draw Keymap** GitHub Action (`.github/workflows/draw.yml`) redraws this
+diagram with [keymap-drawer](https://github.com/caksoylar/keymap-drawer)
+whenever anything in `config/` changes, and commits the result to
+`keymap-drawer/` (`imprint.svg` plus the parsed `imprint.yaml`). Legends and
+styling are set in `keymap_drawer.config.yaml`. The key positions come from the
+physical layout chosen in `config/imprint.keymap`, read from the pinned
+`zmk-keyboards` module. You can also run it by hand from the Actions tab.
+
 ## Pinned versions
 `config/west.yml` pins two projects to fixed releases so your firmware is reproducible and cannot change under you:
 

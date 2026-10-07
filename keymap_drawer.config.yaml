@@ -1,0 +1,30 @@
+# keymap-drawer settings, used by .github/workflows/draw.yml.
+# All options: https://github.com/caksoylar/keymap-drawer/blob/main/CONFIGURATION.md
+draw_config:
+  key_h: 56.0
+  append_colon_to_layer_header: true
+  svg_extra_style: |
+    /* Color accent for held keys */
+    rect.held, rect.combo.held {
+        fill: #ffc;
+    }
+
+parse_config:
+  # Shorter legends for mouse keys, which keymap-drawer doesn't know by default
+  raw_binding_map:
+    "&mkp LCLK": "L Click"
+    "&mkp MB1": "L Click"
+    "&mkp RCLK": "R Click"
+    "&mkp MB2": "R Click"
+    "&mkp MCLK": "M Click"
+    "&mkp MB3": "M Click"
+    "&mkp MB4": "Back"
+    "&mkp MB5": "Fwd"
+    "&mmv MOVE_UP": "Mouse ↑"
+    "&mmv MOVE_DOWN": "Mouse ↓"
+    "&mmv MOVE_LEFT": "Mouse ←"
+    "&mmv MOVE_RIGHT": "Mouse →"
+    "&msc SCRL_UP": "Scroll ↑"
+    "&msc SCRL_DOWN": "Scroll ↓"
+    "&msc SCRL_LEFT": "Scroll ←"
+    "&msc SCRL_RIGHT": "Scroll →"
