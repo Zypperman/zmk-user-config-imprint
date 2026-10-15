@@ -144,7 +144,7 @@ layers:
   - KP EQUAL
   - AC REFRESH
   - AC HOME
-  - {t: LCTRL, h: sticky}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: LSHIFT, h: sticky}
   - ENTER
@@ -170,8 +170,8 @@ layers:
   - CAPS
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - KP MINUS
+  - KP PLUS
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -216,7 +216,7 @@ layers:
   - DOWN
   - RIGHT
   - {t: ▽, type: trans}
-  - Scroll ↑
+  - {t: ▽, type: trans}
   - Scroll ↓
   - KP 1
   - KP 2
@@ -227,9 +227,9 @@ layers:
   - {t: LCTRL, h: sticky}
   - PG UP
   - PG DN
-  - KP DOT
-  - KP MINUS
-  - KP PLUS
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - KP 0
   - SLCK
