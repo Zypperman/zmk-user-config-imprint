@@ -69,8 +69,8 @@ layers:
   - LCTRL
   - Mouse
   - Mouse R
-  - '['
-  - ']'
+  - Back
+  - Fwd
   - SPACE
   - BSPC
   - {t: ENTER, h: vim and config}
@@ -80,8 +80,8 @@ layers:
   - LCTRL
   - LALT
   - {t: vim and config, h: toggle}
-  - R Click
-  - L Click
+  - '['
+  - ']'
   - RET
   nav:
   - MUTE
@@ -98,8 +98,8 @@ layers:
   - {t: ▽, type: trans}
   - VOL UP
   - PG UP
-  - BRI DEC
-  - BRI UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BRI UP
   - KP DIVIDE
@@ -444,7 +444,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - AC REFRESH
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
